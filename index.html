@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>midi</title>
+    <link rel="stylesheet" href="css/main-temp.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/flex.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/midi.css">
+    <script src="../../js/copy-code.js" defer></script>
+    <script src="../../js/letterFocus.js" defer></script>
+    <link rel="stylesheet" href="../../css/copy-code-animate.css">
+</head>
+<body>
+    <header>
+        <div class="fi ">
+            <!-- javascript documentation -->
+            <a tabindex="1" class="link" id="indexMainLink" href="../index.html">
+                <div>
+                    <h2>&larr;projects</h2>
+    
+                </div>
+            </a>
+        </div>
+        <h1 class="fi jss">midi</h1>
+    </header>
+    <script src="js/midi.js" defer></script>
+    
+    <main>
+        <div class="fc">
+            <div class="fi device-list-container">
+                <label for="devices">Choose a device:</label>
+                <select tabindex="1"  name="devices" id="devices">
+                    <!-- <option value="volvo">Volvo</option>
+                          <option value="saab">Saab</option>
+                          <option value="mercedes">Mercedes</option>
+                          <option value="audi">Audi</option> -->
+                </select>
+            </div>
+            <div class="fi">
+                <span id="numMidi">midi number: </span>
+                <span id="valMidi">value: </span>
+            </div>
+        </div>
+        
+        <div class="fc">
+            <div class="fi">
+                <div class="code-container asc">
+                    <pre tabindex="1" class="copy-code">
+const selectList = document.getElementById('devices')
+if(navigator.requestMIDIAccess()){
+    navigator.requestMIDIAccess().then(success,failure)
+}
+function success(midiAccess){
+    // console.log(midiAccess)
+    midiAccess.addEventListener('statechange', updatDevices)
+    const inputs = midiAccess.inputs
+    inputs.forEach(input => {
+        input.onmidimessage = handleMidi
+    })
+    
+    
+}
+function handleMidi(e){
+    // console.log(e)
+    console.log(e.data[1],e.data[2])
+}
+
+function updatDevices(e) {
+    const inputs = e.target.inputs
+// Add drop down options for select
+    selectList.innerHTML = ''
+    inputs.forEach(input => {
+        let option = document.createElement('option')
+        option.innerText = input.name
+        option.value = input.name
+        // option.value = input.name.replace(" ","")
+        selectList.appendChild(option)
+    })
+}
+function failure(){
+    console.log('Error: could not access requestMIDIaccess')
+}
+                    </pre>
+                </div>
+                
+            </div>
+        </div> 
+    </main>
+    <footer>
+        <h2>Documentation</h2>
+        <div class="projects-container fc">
+            <!-- Tony Teaches Teach -->
+            <a id="tonyTeachesTech" class="project " href="../../javascript/youtube/tonyTeachesTech/curl/00-curl.html">
+                <h2>Tony Teaches Teach</h2>
+                <img src="../../javascript/youtube/tonyTeachesTech/tonyTeachesTech.png" alt="">
+                <a target="_blank"
+                    href="https://docs.cloud.coinbase.com/sign-in-with-coinbase/docs/api-users#:~:text=No%20permission%20required-,Example%20request,-curl%20https%3A//api.coinbase.com/v2/users">webpage</a>
+            </a>
+        </div>
+    </footer>
+</body>
+</html>

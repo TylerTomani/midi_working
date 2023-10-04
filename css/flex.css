@@ -1,0 +1,58 @@
+.flex,
+.fc {
+    display: flex;
+}
+.fcol > .fc {
+    display: flex;
+}
+
+.fcol {
+    display: flex;
+    flex-direction: column;
+}
+
+
+.ac {align-items: center !important;}
+.ae {align-items: flex-end !important;}
+.as {align-items: flex-start !important;}
+.jc {justify-content: center !important;}
+.je {justify-content: flex-end !important;}
+.js {justify-content: flex-start !important;}
+
+.jsc {justify-self: center !important;}
+.jse {justify-self: flex-end !important;}
+.jss {justify-self: flex-start !important;}
+.asc {align-self: center !important;}
+.ass {align-self: flex-start !important;}
+.ase {align-self: flex-end !important;}
+
+.mauto {
+    margin: auto;
+}
+/* margin top bottom is auto  */
+.mtbauto{margin: auto 0;}
+/* margin sides left right is auto  */
+.msauto{margin: 0 auto;}
+/* margin-top */
+.mt2{margin-top: 2%;}
+.mt25{margin-top: 25%;}
+.mt50{margin-top: 25%;}
+
+/* margin-top-bottom */
+.mtb2{margin: 2% 0;}
+
+/* margin-bottom */
+.mb2{margin-bottom: 2%;}
+.mb25{margin-bottom: 25%;}
+.mb50{margin-bottom: 25%;}
+
+.mtb25{margin: 25% 0;}
+.mtb50{margin: 50% 0;}
+
+.ml1{margin-left: 1%;}
+.ml2{margin-left: 2%;}
+.ml5{margin-left: 5%;}
+.ml10{margin-left: 10%;}
+
+
+  
